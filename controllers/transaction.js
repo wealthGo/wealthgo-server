@@ -107,8 +107,11 @@ export const getWithdrawals = async (req, res) => {
   try {
     const { id } = req.params;
     const withdrawals = await Transaction.find({
-      customerId: id,
-      transactionType: "withdrawal",
+      $or: [
+        { transactionType: "withdrawal" },
+        { transactionType: "Subscription Debit" },
+      ],
+      $and: [{ customerId: id }],
     }).sort("-createdAt");
 
     if (withdrawals && withdrawals.length !== 0) {

@@ -33,10 +33,19 @@ export const invest = async (req, res) => {
 
     const data = await newInvestment.save();
 
-    res.status(201).json(data);
+    const debitTransaction = new Transaction({
+      customerId: customerId,
+      emailId: email,
+      transactionType: "Subscription Debit",
+      amount: investAmount,
+      paymentMethod: "Balance",
+      verification: "approved",
+    });
+    const debit = await debitTransaction.save();
+    res.status(201).json({ data, debit });
 
     const created = () => {
-      const abb = new Date(now.getTime() + 20000 );
+      const abb = new Date(now.getTime() + t * 60 * 60 * 1000);
       const task = schedule.scheduleJob(abb, async () => {
         console.log("Running a task");
         await scheduleUPdate();

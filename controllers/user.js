@@ -66,9 +66,11 @@ export const getDashboard = async (req, res) => {
 
     //get total approved withdrawals
     const twithdrawal = await Transaction.find({
-      customerId: id,
-      transactionType: "withdrawal",
-      verification: "approved",
+      $or: [
+        { transactionType: "withdrawal" },
+        { transactionType: "Subscription Debit" },
+      ],
+      $and: [{ verification: "approved" }, { customerId: id }],
     }).sort("-createdAt");
     newArr = [];
     let twithTotal;
