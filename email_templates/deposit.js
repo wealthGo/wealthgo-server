@@ -100,7 +100,7 @@ mso-hide:all;
 <td align="center" valign="top" style="padding:0;Margin:0;width:520px">
 <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tr>
-<td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">Thanks, WealthGo<br><br>Privacy Policy</p></td>
+<td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">Thanks, WealthGo<br></p></td>
 </tr>
 <tr>
 <td align="center" style="padding:0;Margin:0;padding-bottom:20px;padding-top:40px;font-size:0">

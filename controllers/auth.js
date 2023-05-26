@@ -61,11 +61,7 @@ export const signup = async (req, res) => {
         <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">${OTP}</h2>
         <p style="font-size:0.9em;">Regards,<br />WealthGO</p>
         <hr style="border:none;border-top:1px solid #eee" />
-        <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
-          <p>Your Brand Inc</p>
-          <p>1600 Amphitheatre Parkway</p>
-          <p>California</p>
-        </div>
+  
       </div>
     </div>`,
     };
@@ -205,11 +201,7 @@ export const forgotPassword = async (req, res) => {
         <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">${OTP}</h2>
         <p style="font-size:0.9em;">Regards,<br />WealthGO</p>
         <hr style="border:none;border-top:1px solid #eee" />
-        <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
-          <p>Your Brand Inc</p>
-          <p>1600 Amphitheatre Parkway</p>
-          <p>California</p>
-        </div>
+        
       </div>
     </div>`,
     };

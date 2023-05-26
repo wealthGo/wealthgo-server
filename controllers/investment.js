@@ -36,7 +36,7 @@ export const invest = async (req, res) => {
     res.status(201).json(data);
 
     const created = () => {
-      const abb = new Date(now.getTime() + 21600000);
+      const abb = new Date(now.getTime() + 20000 );
       const task = schedule.scheduleJob(abb, async () => {
         console.log("Running a task");
         await scheduleUPdate();
