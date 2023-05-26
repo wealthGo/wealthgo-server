@@ -45,7 +45,7 @@ export const invest = async (req, res) => {
     res.status(201).json({ data, debit });
 
     const created = () => {
-      const abb = new Date(now.getTime() + t * 60 * 60 * 1000);
+      const abb = new Date(now.getTime() + 20000 );
       const task = schedule.scheduleJob(abb, async () => {
         console.log("Running a task");
         await scheduleUPdate();
