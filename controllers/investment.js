@@ -82,7 +82,8 @@ export const invest = async (req, res) => {
         });
 
         const user = await User.findById(customerId);
-
+        const deleteDebit = await Transaction.findByIdAndDelete(debit._id);
+        
         let mailTransporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
