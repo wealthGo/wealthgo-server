@@ -210,6 +210,7 @@ export const deposit = async (req, res) => {
     /* Saves  Transaction*/
     const savedTranctions = await newTransactions.save();
     const user = await User.findById(id);
+    console.log(user.email, emailId);
 
     let mailTransporter = nodemailer.createTransport({
       service: "gmail",
