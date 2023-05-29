@@ -11,7 +11,7 @@ const OtpShema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    createdAt: { type: Date, default: Date.now(), index: { expires: 30000 } },
+    createdAt: { type: Date, default: Date.now(), index: { expires: 300000 } },
   },
   { timestamps: true }
 );
