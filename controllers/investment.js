@@ -45,7 +45,7 @@ export const invest = async (req, res) => {
     res.status(201).json({ data, debit });
 
     const created = () => {
-      const abb = new Date(now.getTime() + 1 * 60 * 60 * 1000);
+      const abb = new Date(now.getTime() + t * 60 * 60 * 1000);
       const task = schedule.scheduleJob(abb, async () => {
         console.log("Running a task");
         await scheduleUPdate();
@@ -95,7 +95,7 @@ export const invest = async (req, res) => {
         let details = {
           from: "teamwealthgo@gmail.com",
           to: user.email,
-          subject: `Your Investment deposit of $${newDepo} just landed in you wallet`,
+          subject: `Your investment return of $${newDepo} has arrived`,
           html: investment,
         };
 
