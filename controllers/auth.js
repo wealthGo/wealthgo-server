@@ -41,6 +41,12 @@ export const signup = async (req, res) => {
       digits: true,
     });
 
+    console.log({ OTP });
+    const otp = new Otp({ email: emailLower, otp: OTP });
+    const salt = await bcrypt.genSalt(10);
+    otp.otp = await bcrypt.hash(otp.otp, salt);
+    const result = await otp.save();
+
     let mailTransporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -53,7 +59,7 @@ export const signup = async (req, res) => {
       from: "teamwealthgo@gmail.com",
       to: email,
       subject: "OTP",
-      text: "",
+      text: "testing testing testing",
       html: `<div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
       <div style="margin:50px auto;width:70%;padding:20px 0">
         <div style="border-bottom:1px solid #eee">
@@ -75,12 +81,6 @@ export const signup = async (req, res) => {
         console.log("email has been sent");
       }
     });
-
-    console.log({ OTP });
-    const otp = new Otp({ email: emailLower, otp: OTP });
-    const salt = await bcrypt.genSalt(10);
-    otp.otp = await bcrypt.hash(otp.otp, salt);
-    const result = await otp.save();
 
     return res
       .status(201)

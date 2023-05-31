@@ -78,7 +78,7 @@ export const getDeposits = async (req, res) => {
     const deposits = await Transaction.find({
       $or: [
         { transactionType: "deposits" },
-        { transactionType: "Investments Deposit" },
+        { transactionType: "Investments Return" },
       ],
       $and: [{ customerId: id }],
     }).sort("-createdAt");

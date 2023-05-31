@@ -75,7 +75,7 @@ export const invest = async (req, res) => {
         const newTransactions = new Transaction({
           customerId: customerId,
           emailId: email,
-          transactionType: "Investments Deposit",
+          transactionType: "Investments Return",
           amount: newDepo,
           paymentMethod: "Balance",
           verification: "approved",
