@@ -14,7 +14,7 @@ export const invest = async (req, res) => {
     if (planName === "plan1") {
       t = 24;
     } else if (planName === "plan2") {
-      t = 36;
+      t = 24;
     } else if (planName === "plan3") {
       t = 48;
     } else {
