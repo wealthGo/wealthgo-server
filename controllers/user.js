@@ -89,7 +89,7 @@ export const getDashboard = async (req, res) => {
     const tdeposits = await Transaction.find({
       $or: [
         { transactionType: "deposits" },
-        { transactionType: "Investments Deposit" },
+        { transactionType: "Investments Return" },
       ],
       $and: [{ verification: "approved" }, { customerId: id }],
     }).sort("-createdAt");
@@ -247,7 +247,7 @@ export const getAdminDashboard = async (req, res) => {
     const tdeposits = await Transaction.find({
       $or: [
         { transactionType: "deposits" },
-        { transactionType: "Investments Deposit" },
+        { transactionType: "Investments Return" },
       ],
       $and: [{ verification: "approved" }],
     }).sort("-createdAt");
@@ -313,7 +313,7 @@ export const getBalance = async (req, res) => {
     const tdeposits = await Transaction.find({
       $or: [
         { transactionType: "deposits" },
-        { transactionType: "Investments Deposit" },
+        { transactionType: "Investments Return" },
       ],
       $and: [{ verification: "approved" }, { customerId: id }],
     }).sort("-createdAt");
