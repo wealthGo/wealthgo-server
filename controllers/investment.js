@@ -69,7 +69,7 @@ export const invest = async (req, res) => {
       if (newInv) {
         if (investAmount <= 0) return res.status(500).json("Invalid amount");
         let newDepo = 0;
-        newDepo = updatedAmount + JSON.parse(investAmount);
+        newDepo = updatedAmount;
         console.log(newDepo);
 
         const newTransactions = new Transaction({
